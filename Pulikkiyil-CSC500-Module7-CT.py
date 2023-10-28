@@ -37,12 +37,13 @@ meeting_times = {
 }
 
 # Prompt the user for a course number
-course_number = input("Enter a course number (e.g., CSC101):\n ")
+course_number = input("Enter a course number (e.g., CSC101):\n")
 
 # Display course information
-if course_number in room_numbers:
+if course_number not in room_numbers:
+    print("\nCourse not found.")
+else:
     print("\nRoom Number:", room_numbers[course_number])
     print("\nInstructor:", instructors[course_number])
     print("\nMeeting Time:", meeting_times[course_number])
-else:
-    print("\nCourse not found.")
+    
